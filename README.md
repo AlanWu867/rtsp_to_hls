@@ -68,4 +68,33 @@ http {
     }
 }
 ```
-- 最後測試網址：http://127.0.0.1:8080/webserver/streamTemp/ch3.m3u8 ，有下載影片代表成功。
+## 測試
+- 測試網址：http://127.0.0.1:8080/webserver/streamTemp/ch3.m3u8 ，有下載影片代表成功。
+- video.js網頁直播，參考來源---->https://docs.peer5.com/guides/setting-up-hls-live-streaming-server-using-nginx/
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JW7 Player test</title>
+    <!-- peer5 client library -->
+    <script src="https://api.peer5.com/peer5.js?id=YOUR_PEER5_CUSTOMER_ID"></script>
+
+    <!-- videojs5 scripts - You can change to your self hosted scripts -->
+    <link rel="stylesheet" href="https://api.peer5.com/videojs5/assets/video-js.min.css">
+    <script src="https://api.peer5.com/videojs5.js"></script>
+
+    <!-- peer5 plugin for videojs5 -->
+    <script src="https://api.peer5.com/peer5.videojs5.hlsjs.plugin.js"></script>
+</head>
+<body>
+
+<video id="player" class="video-js vjs-default-skin" height="360" width="640" controls preload="none">
+    <source src="http://127.0.0.1:8080/webserver/streamTemp/ch3.m3u8" type="application/x-mpegURL" />
+</video>
+<script>
+    var player = videojs('#player');
+</script>
+</body>
+</html>
+```
