@@ -68,4 +68,4 @@ http {
     }
 }
 ```
-- 最後測試網址：http://127.0.0.1/webserver/streamTemp/ch3.m3u8 ，有下載影片代表成功。
+- 最後測試網址：http://127.0.0.1:8080/webserver/streamTemp/ch3.m3u8 ，有下載影片代表成功。
