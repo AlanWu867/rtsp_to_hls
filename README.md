@@ -120,4 +120,4 @@ http {
 </html>
 ```
 ## 高機率問題
-1. m3u8檔案IIS無法識別--->[source_1](https://stackoverflow.com/questions/5513469/iis-server-m3u8-extension-not-opening)
+1. m3u8檔案IIS無法識別--->[source_1](https://stackoverflow.com/questions/5513469/iis-server-m3u8-extension-not-opening) [source_2](https://docs.microsoft.com/en-us/iis/configuration/system.webserver/staticcontent/mimemap)
