@@ -35,6 +35,27 @@ http {
         listen      8080;
 		
         location / {
+	    # Disable cache
+            add_header 'Cache-Control' 'no-cache';
+
+            # CORS setup
+            add_header 'Access-Control-Allow-Origin' '*' always;
+            add_header 'Access-Control-Expose-Headers' 'Content-Length';
+
+            # allow CORS preflight requests
+            if ($request_method = 'OPTIONS') {
+                add_header 'Access-Control-Allow-Origin' '*';
+                add_header 'Access-Control-Max-Age' 1728000;
+                add_header 'Content-Type' 'text/plain charset=UTF-8';
+                add_header 'Content-Length' 0;
+                return 204;
+            }
+
+            types {
+                application/dash+xml mpd;
+                application/vnd.apple.mpegurl m3u8;
+                video/mp2t ts;
+            }
             root D:/webServer/;
         }
 		
